@@ -1,0 +1,19 @@
+package makesandwitch;
+
+public class Hambarger extends Sandwich {
+
+	void addMeat() {
+		// TODO Auto-generated method stub
+		System.out.println("Meat added");
+		
+	}
+
+	void addCondiments() {
+		// TODO Auto-generated method stub
+		System.out.println("Condiments Added");
+	}
+	
+	public void addVegetables(){
+		System.out.println("Lettuce as veg");
+	}
+}

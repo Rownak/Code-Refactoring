@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;makesandwitch.Sandwitch&apos; to &apos;Sandwich&apos;&#x0D;&#x0A;- Original project: &apos;Eliminate Duplicate Code With templete Method&apos;&#x0D;&#x0A;- Original element: &apos;makesandwitch.Sandwitch&apos;&#x0D;&#x0A;- Renamed element: &apos;makesandwitch.Sandwich&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Sandwitch&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;makesandwitch{Sandwitch.java[Sandwitch" matchStrategy="1" name="Sandwich" qualified="false" references="true" similarDeclarations="false" stamp="1420686660571" textual="false" version="1.0"/>
+</session>

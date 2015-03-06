@@ -1,0 +1,15 @@
+package makesandwitch;
+
+public class VegSandwich {
+	
+	void addMeat() {
+		
+	}
+
+	void addCondiments() {
+		// TODO Auto-generated method stub
+		System.out.println("Condiments Added");
+	}
+
+
+}

@@ -71,7 +71,7 @@ class CustomerFactory{
         try{
            return (Customer2) Class.forName(custType).newInstance();
         }catch(Exception e){
-            System.out.println("Invalid Customer Type");
+            e.printStackTrace();
         }
         return null;
     }

@@ -1,0 +1,23 @@
+package makesandwitch;
+
+public abstract class Sandwitch {
+
+	public void makeSandwitch(){
+		
+		cutBun();
+		
+		if(customerWantsMeat()){
+			
+			addMeat();
+		}
+		
+		addVegetables();
+		
+		if(customerWantsCondiments()){
+			 
+			addCondiments();
+		}
+		
+		wrapSandwich();
+	}
+}

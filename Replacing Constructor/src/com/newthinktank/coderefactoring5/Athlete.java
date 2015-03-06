@@ -1,10 +1,12 @@
+package com.newthinktank.coderefactoring5;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-package com.newthinktank.coderefactoring5;
+
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -15,7 +17,7 @@ import java.util.logging.Logger;
  *
  * @author Rownak
  */
-public class Athlete {
+public abstract class Athlete {
     
     private String name = "";
 
@@ -30,6 +32,7 @@ public class Athlete {
     public static Athlete getInstance(){
         return null;
     }
+
 }
 
 class GoldWinner extends Athlete{
@@ -40,7 +43,7 @@ class GoldWinner extends Athlete{
         setName(athleteName);
     }
     
-    public GoldWinner getInstance(String athleteName){
+    public static GoldWinner  getInstance(String athleteName){
         if(goldAthlete == null){
             goldAthlete = new GoldWinner(athleteName);
         }
@@ -56,7 +59,7 @@ class SilverWinner extends Athlete{
         setName(athleteName);
     }
     
-    public SilverWinner getInstance(String athleteName){
+    public static SilverWinner getInstance(String athleteName){
         if(silverWinner == null){
             silverWinner = new SilverWinner(athleteName);
         }
@@ -72,7 +75,7 @@ class BronzeWinner extends Athlete{
         setName(athleteName);
     }
     
-    public BronzeWinner getInstance(String athleteName){
+    public static BronzeWinner getInstance(String athleteName){
         if(bronzeWinner == null){
             bronzeWinner = new BronzeWinner(athleteName);
         }
@@ -86,6 +89,7 @@ class MedalFactory{
         
         
             
+   
         try {
             Class[] athleteNameParameter = new Class[] {String.class};
         
@@ -94,10 +98,11 @@ class MedalFactory{
             Object[] params = new Object[] {new String(athleteName)};
         
             return (Athlete)getInstanceMethod.invoke(null, params);
-            
         } catch (Exception ex) {
-            throw new IllegalArgumentException("Invalid Medal Type");
+           throw new IllegalArgumentException("Not such a class");
         } 
+            
+       
         
             
       
@@ -107,7 +112,7 @@ class MedalFactory{
 
 class TestAthlete{
     
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         
         MedalFactory medalFactory = new MedalFactory();
         
@@ -117,7 +122,7 @@ class TestAthlete{
         
         Athlete goldWinnerAthleteNew = medalFactory.getMedal("com.newthinktank.coderefactoring5.GoldWinner", "New Winner");
         
-        System.out.println("GoldWinner Name :" +goldWinnerAthlete.getName());
+        System.out.println("GoldWinner Name :" +goldWinnerAthleteNew.getName());
         System.out.println("GoldWinner Name :" +silverWinnerAthlete.getName());
         System.out.println("GoldWinner Name :" +bronzeWinnerAthlete.getName());
         

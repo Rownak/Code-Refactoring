@@ -14,15 +14,20 @@ public class ReplaceConditionalWithStrategy {
     
     public static void main(String[] args) {
         
-        Employee salesman = new Salesman(10000);
-        Employee secretary = new Secretary(15000);
+        Employee salesman = new Salesman(15000);
+        Employee secretary = new Secretary(25000);
         
         System.out.println("Salseman salary :" + salesman.getPay());
         System.out.println("Secretary salary :" + secretary.getPay());
         
         salesman.setBonusOption(new GetsBonus());
         System.out.println("Salseman salary :" + salesman.getPay());
-        Employee senior_salesman = new Salesman(10000);
+        Employee salesTrainee = new Salesman(15000, new NoBonus());
+        System.out.println("Salseman Trainee :" + salesTrainee.getPay());
+        
+        secretary.setBonusOption(new GetsBonus());
+        System.out.println("Secretary salary :" + secretary.getPay());
+
 
     }
     
@@ -64,7 +69,14 @@ class GetsBonus implements Pay{
     }
     
 }
+class Bonus20Per implements Pay{
 
+    @Override
+    public double getPay(double salary) {
+        return salary + salary*0.20;
+    }
+    
+}
 class Salesman extends Employee{
 
     public Salesman(double salary) {
